@@ -6,73 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="40dp">
+    android:paddingTop="20dp">
 
-    <TextView
-        android:id="@+id/startLogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:text="@string/welcome_button_register"
-        android:textSize="50sp"
-        android:gravity="bottom|center"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:layout_gravity="center"
-        android:layout_marginBottom="40dp"/>
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back"
+        android:backgroundTint="#00FFFFFF"
+        android:layout_marginLeft="10dp"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_text_input"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:hint="@string/welcome_hint_email">
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/startLogo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_button_register"
+            android:textSize="50sp"
+            android:gravity="bottom|center"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="50dp"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_edit_text"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_text_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLines="1"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_margin="4dp"
+            android:hint="@string/welcome_hint_email">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/username_text_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:hint="@string/welcome_hint_username">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_edit_text"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username_text_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:maxLines="1"/>
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password_text_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:hint="@string/welcome_hint_password">
+            android:layout_margin="4dp"
+            android:hint="@string/welcome_hint_username">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_edit_text"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_text_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/register_button"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/welcome_button_register" />
+            android:layout_margin="4dp"
+            android:hint="@string/welcome_hint_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/register_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/welcome_button_register" />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
 </LinearLayout>

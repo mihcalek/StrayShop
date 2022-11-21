@@ -18,18 +18,21 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/productGridFragment2"
         android:name="com.example.projektmb4pp.ProductGridFragment"
         android:label="fragment_product_gridd"
         tools:layout="@layout/fragment_product_gridd" />
-    <fragment android:id="@+id/placeholder" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.projektmb4pp.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
 </navigation>
