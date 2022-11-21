@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjektMB4PP</string>
+    <string name="app_name">StrayShop</string>
     <string name="welcome_hint_login">Login</string>
     <string name="welcome_hint_password">Hasło</string>
     <string name="welcome_button_login">Login</string>

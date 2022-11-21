@@ -2,7 +2,6 @@ package com.example.projektmb4pp;
 
 import android.os.Bundle;
 import android.text.Editable;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,6 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.Objects;
-
 public class LoginFragment extends Fragment {
     @Nullable
     @Override
@@ -28,6 +25,8 @@ public class LoginFragment extends Fragment {
         final TextInputLayout passwordTextInput = view.findViewById(R.id.password_text_input);
         final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text);
         MaterialButton nextButton = view.findViewById(R.id.login_button);
+        MaterialButton registerButton = view.findViewById(R.id.register_button);
+
 
 
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +39,13 @@ public class LoginFragment extends Fragment {
                     passwordTextInput.setError(null); // Usuwa błąd
                     Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_productGridFragment2);
                 }
+            }
+        });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registerFragment);
             }
         });
 
