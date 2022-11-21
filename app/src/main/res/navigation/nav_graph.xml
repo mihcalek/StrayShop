@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.projektmb4pp.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_productGridFragment2"
+            app:destination="@id/productGridFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productGridFragment2"
+        android:name="com.example.projektmb4pp.ProductGridFragment"
+        android:label="fragment_product_gridd"
+        tools:layout="@layout/fragment_product_gridd" />
+    <fragment android:id="@+id/placeholder" />
+</navigation>
