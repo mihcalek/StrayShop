@@ -5,6 +5,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,5 +21,6 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
     }
 }
