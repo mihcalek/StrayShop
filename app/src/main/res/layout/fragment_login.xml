@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:hint="@string/welcome_hint_login">
+        android:hint="@string/welcome_hint_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_edit_text"
