@@ -36,7 +36,8 @@
         tools:layout="@layout/fragment_welcome" >
         <action
             android:id="@+id/action_welcomeFragment_to_templateFragment"
-            app:destination="@id/templateFragment" />
+            app:destination="@id/templateFragment"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/templateFragment"
