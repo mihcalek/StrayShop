@@ -23,12 +23,7 @@
         android:id="@+id/registerFragment"
         android:name="com.example.projektmb4pp.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" >
-        <action
-            android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@android:anim/fade_in" />
-    </fragment>
+        tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.projektmb4pp.WelcomeFragment"
@@ -41,7 +36,11 @@
     </fragment>
     <fragment
         android:id="@+id/templateFragment"
-        android:name="com.example.projektmb4pp.TemplateFragment"
+        android:name="com.example.projektmb4pp.HomeFragment"
         android:label="fragment_template"
-        tools:layout="@layout/fragment_template" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_templateFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

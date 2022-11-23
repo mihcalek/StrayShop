@@ -34,7 +34,7 @@ public class RegisterFragment extends Fragment {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
+//                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_loginFragment);
             }
         });
 
