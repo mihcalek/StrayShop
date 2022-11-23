@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/accelerator"
+        android:icon="@drawable/search"
+        android:title="accelerator"
+        android:contentDescription="content_description_accelerator"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/rotation"
+        android:icon="@drawable/search"
+        android:title="rotation"
+        android:contentDescription="content_description_rotation"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/search"
+        android:title="dashboard"
+        android:contentDescription="content_description_dashboard"
+        app:showAsAction="ifRoom"/>
+</menu>
