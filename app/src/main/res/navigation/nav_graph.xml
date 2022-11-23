@@ -15,11 +15,6 @@
             app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
-        android:id="@+id/productGridFragment2"
-        android:name="com.example.projektmb4pp.ProductGridFragment"
-        android:label="fragment_product_gridd"
-        tools:layout="@layout/fragment_product_gridd" />
-    <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.projektmb4pp.RegisterFragment"
         android:label="fragment_register"
@@ -43,4 +38,14 @@
             android:id="@+id/action_templateFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.projektmb4pp.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.projektmb4pp.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
 </navigation>
