@@ -37,7 +37,7 @@ public class LoginFragment extends Fragment {
                     passwordTextInput.setError(getString(R.string.welcome_error_password));
                 } else {
                     passwordTextInput.setError(null); // Usuwa błąd
-                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_productGridFragment2);
+//                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_productGridFragment2);
                 }
             }
         });

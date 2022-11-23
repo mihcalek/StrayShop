@@ -32,7 +32,7 @@ public class WelcomeFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_productGridFragment2);
+                Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_templateFragment);
             }
         }, 1500);
         return view;
