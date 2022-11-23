@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".TemplateFragment"
-    android:background="@color/primary">
+    tools:context=".TemplateFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -55,6 +54,6 @@
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation_menu"
         android:layout_gravity="bottom"
-        android:theme="@style/ThemeOverlay.Material3.BottomAppBar"/>
+        style="@style/Widget.MaterialComponents.BottomAppBar" />
 
 </FrameLayout>
