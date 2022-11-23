@@ -12,5 +12,6 @@
     <string name="search_title">search</string>
     <string name="filter_title">filter</string>
     <string name="welcome_hint_email">E-mail</string>
+    <string name="toolbar_title">STRAYSHOP</string>
 
 </resources>
