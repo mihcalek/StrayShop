@@ -13,7 +13,6 @@
         android:text="@string/toolbar_title"
         android:fontFamily="@font/robotoserif_regular"
         android:textSize="38sp"
-        android:textColor="@color/fontcolor"
         />
 
 </RelativeLayout>

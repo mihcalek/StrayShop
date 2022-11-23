@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.optionHome:
-                        Navigation.findNavController(view).navigate(R.id.loginFragment);
+                        Navigation.findNavController(view).navigate(R.id.homeFragment);
                         return true;
 
                     case R.id.optionAccount:
@@ -46,11 +46,11 @@ public class HomeFragment extends Fragment {
                         return true;
 
                     case R.id.optionCart:
-//                        Navigation.findNavController(view).navigate(R.id.loginFragment);
+                        Navigation.findNavController(view).navigate(R.id.cartFragment);
                         return true;
 
                     case R.id.optionSettings:
-//                        getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
+                        Navigation.findNavController(view).navigate(R.id.settingsFragment);
                         return true;
                 }
                 return false;
