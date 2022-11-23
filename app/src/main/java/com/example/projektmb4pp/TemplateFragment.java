@@ -9,8 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class TemplateFragment extends Fragment {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+public class TemplateFragment extends Fragment {
 
     public TemplateFragment() {
         // Required empty public constructor
@@ -28,6 +29,7 @@ public class TemplateFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_template, container, false);
 
+        final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
 
         return view;
     }
