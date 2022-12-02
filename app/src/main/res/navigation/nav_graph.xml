@@ -53,4 +53,9 @@
         android:name="com.example.projektmb4pp.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/showcaseFragment"
+        android:name="com.example.projektmb4pp.ShowcaseFragment"
+        android:label="fragment_showcase"
+        tools:layout="@layout/fragment_showcase" />
 </navigation>

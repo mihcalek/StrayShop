@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         NavController navController = navHostFragment.getNavController();
 
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
