@@ -35,6 +35,9 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
+        NavHostFragment navHostFragment =
+                (NavHostFragment) getChildFragmentManager().findFragmentById(R.id.nav_home_fragment);
+        NavController navController = navHostFragment.getNavController();
 
         final BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
 
@@ -47,15 +50,15 @@ public class HomeFragment extends Fragment {
                         return true;
 
                     case R.id.optionAccount:
-                        Navigation.findNavController(view).navigate(R.id.loginFragment);
+                        Navigation.findNavController(view).navigate(R.id.welcomeFragment);
                         return true;
 
                     case R.id.optionCart:
-                        Navigation.findNavController(view).navigate(R.id.cartFragment);
+                        Navigation.findNavController(view).navigate(R.id.welcomeFragment);
                         return true;
 
                     case R.id.optionSettings:
-                        Navigation.findNavController(view).navigate(R.id.settingsFragment);
+                        Navigation.findNavController(view).navigate(R.id.homeFragment);
                         return true;
                 }
                 return false;

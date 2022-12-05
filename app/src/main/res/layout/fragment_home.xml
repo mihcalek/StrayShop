@@ -48,12 +48,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:id="@+id/home_fragment_container"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_home_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
 
-            </FrameLayout>
+                app:defaultNavHost="false"
+                app:navGraph="@navigation/nav_graph_home" />
+
 
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
