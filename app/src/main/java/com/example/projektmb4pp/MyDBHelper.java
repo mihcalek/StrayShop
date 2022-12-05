@@ -44,21 +44,29 @@ public class MyDBHelper extends SQLiteOpenHelper {
     public static final String PRODUCT_COLUMN_NAME = "name"; //varchar(60)
     public static final String PRODUCT_COLUMN_COST = "cost"; //real(8, 2)
     public static final String PRODUCT_COLUMN_SIZE = "size"; //varchar(20)
-    public static final String PRODUCT_COLUMN_type = "type"; //varchar(30)
+    public static final String PRODUCT_COLUMN_TYPE = "type"; //varchar(30)
+    public static final String PRODUCT_COLUMN_IMAGE = "image"; //blob
 
 
 
     public MyDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+    public void onCreate(SQLiteDatabase db) {
+        String query =
+                "CREATE TABLE " + ACCOUNT_TABLE_NAME +
+                        " (" +
+                        ACCOUNT_COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        ACCOUNT_COLUMN_EMAIL + " TEXT UNIQUE, " +
+                        ACCOUNT_COLUMN_PASSWORD + " TEXT);";
+        db.execSQL(query);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + ACCOUNT_TABLE_NAME);
     }
 }
