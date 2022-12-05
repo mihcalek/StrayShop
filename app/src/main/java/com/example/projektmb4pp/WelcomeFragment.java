@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -32,7 +33,7 @@ public class WelcomeFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_templateFragment);
+                Navigation.findNavController(container).navigate(R.id.homeFragment);
             }
         }, 1500);
         return view;
