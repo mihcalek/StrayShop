@@ -5,19 +5,14 @@
         android:title="@string/app_name">
         <menu>
             <item
-                android:id="@+id/inbox_item"
+                android:id="@+id/tosButton"
                 android:icon="@drawable/sample"
-                android:title="@string/app_name"
+                android:title="TOS"
                 android:checkable="true"/>
             <item
-                android:id="@+id/outbox_item"
+                android:id="@+id/authorButton"
                 android:icon="@drawable/sample"
-                android:title="@string/app_name"
-                android:checkable="true"/>
-            <item
-                android:id="@+id/favourites_item"
-                android:icon="@drawable/sample"
-                android:title="@string/app_name"
+                android:title="Author"
                 android:checkable="true"/>
         </menu>
     </item>

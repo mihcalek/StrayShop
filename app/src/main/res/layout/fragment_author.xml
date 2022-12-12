@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowcaseFragment">
+    tools:context=".AuthorFragment"
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Showcase layout" />
+        android:text="Wykonane przez Michała Brzezińskiego" />
 
 </FrameLayout>

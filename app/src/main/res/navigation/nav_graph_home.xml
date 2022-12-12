@@ -28,4 +28,9 @@
         android:name="com.example.projektmb4pp.ShowcaseFragment"
         android:label="fragment_showcase"
         tools:layout="@layout/fragment_showcase" />
+    <fragment
+        android:id="@+id/authorFragment"
+        android:name="com.example.projektmb4pp.AuthorFragment"
+        android:label="fragment_author"
+        tools:layout="@layout/fragment_author" />
 </navigation>
