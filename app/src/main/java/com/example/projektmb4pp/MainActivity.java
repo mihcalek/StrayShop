@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toolbar;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+        SQLiteOpenHelper sqliteOpenHelper = new DatabaseLMAO.DBHelper(this);
+        SQLiteDatabase db = sqliteOpenHelper.getWritableDatabase();
 
 
 
