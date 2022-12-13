@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public final class DatabaseLMAO {
 
-    private DatabaseLMAO() {};
+    private DatabaseLMAO() {}
 
     public static class DBHelper extends SQLiteOpenHelper{
 
@@ -24,16 +24,41 @@ public final class DatabaseLMAO {
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-            sqLiteDatabase.execSQL(methodsCreate.sqlCreateAll);
-            sqLiteDatabase.execSQL(methodsInsert.sqlInsertAll);
+            sqLiteDatabase.execSQL(methodsCreate.sqlCreateAccount);
+            sqLiteDatabase.execSQL(methodsCreate.sqlCreateClient);
+            sqLiteDatabase.execSQL(methodsCreate.sqlCreateCart);
+            sqLiteDatabase.execSQL(methodsCreate.sqlCreateCartProduct);
+            sqLiteDatabase.execSQL(methodsCreate.sqlCreateProduct);
 
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertAccount(1, "admin@gmail.com", "admin"));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertClient("imie", "nazwisko", "2004-08-16", "123456789"));
 
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertAccount(2, "user@gmail.com", "user"));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertClient("Jan", "Kowalski", "1998-05-11", "987654321"));
+
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertAccount(3, "michal@gmail.com", "michal"));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertClient("Michał", "Brzeziński", "2004-08-16", "111222333"));
+
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCart(1, "2022-12-13", "ul. świętego józefa 26", "87-100", "Toruń"));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCartProduct(1, 1, 1, "S"));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCart(2, "2022-12-11", "ul. Wybickiego 13", "32-200", "Gdańsk"));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCartProduct(2, 2, 5, "L"));
+
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Bluza z kapturem", "Opis fajna bluza", 99.99, "bluza", R.drawable.sample));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Spodnie jeansowe", "Opis fajne spodnie", 119.99, "spodnie", R.drawable.sample));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Koszulka", "Opis fajna koszulka", 59.99, "koszulka", R.drawable.sample));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Kurtka", "Opis fajna kurtka", 199.99, "kurtka", R.drawable.sample));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Golf", "Opis fajny golf", 79.99, "golf", R.drawable.sample));
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
             //usunac tabele z bazy wszustkie
-            sqLiteDatabase.execSQL(methodsDrop.sqlDropAll);
+            sqLiteDatabase.execSQL(methodsDrop.sqlDropAccount);
+            sqLiteDatabase.execSQL(methodsDrop.sqlDropClient);
+            sqLiteDatabase.execSQL(methodsDrop.sqlDropCart);
+            sqLiteDatabase.execSQL(methodsDrop.sqlDropCartProduct);
+            sqLiteDatabase.execSQL(methodsDrop.sqlDropProduct);
             onCreate(sqLiteDatabase);
         }
 
@@ -47,7 +72,6 @@ public final class DatabaseLMAO {
         public static final String COLUMN_ID_CLIENT = "id_client"; //integer
         public static final String COLUMN_EMAIL = "email"; //text unique
         public static final String COLUMN_PASSWORD = "password"; //text
-        //klient id
     }
     private static class Client implements BaseColumns{
         public static final String TABLE_NAME = "Client";
@@ -126,9 +150,6 @@ public final class DatabaseLMAO {
                         Product.COLUMN_COST + " REAL(8, 2) NOT NULL, " +
                         Product.COLUMN_TYPE + " TEXT NOT NULL, " +
                         Product.COLUMN_IMAGE + " BLOB NOT NULL);";
-
-        private static final String sqlCreateAll =
-                sqlCreateAccount + sqlCreateClient + sqlCreateCart + sqlCreateCartProduct + sqlCreateProduct;
     }
     private static class methodsDrop {
         private static final String sqlDropAccount = "DROP TABLE IF EXISTS " + Account.TABLE_NAME + ";";
@@ -136,35 +157,34 @@ public final class DatabaseLMAO {
         private static final String sqlDropCart = "DROP TABLE IF EXISTS " + Cart.TABLE_NAME + ";";
         private static final String sqlDropCartProduct = "DROP TABLE IF EXISTS " + CartProduct.TABLE_NAME + ";";
         private static final String sqlDropProduct = "DROP TABLE IF EXISTS " + Product.TABLE_NAME + ";";
-        private static final String sqlDropAll = sqlDropAccount + sqlDropClient + sqlDropCart + sqlDropCartProduct + sqlDropProduct;
+//        private static final String sqlDropAll = sqlDropAccount + sqlDropClient + sqlDropCart + sqlDropCartProduct + sqlDropProduct;
     }
     private static class methodsInsert{
-        private static final String sqlInsertAccount =
-                "INSERT INTO " + Account.TABLE_NAME + " (" +
-                        Account.COLUMN_ID_CLIENT + ", " + Account.COLUMN_EMAIL + ", " + Account.COLUMN_PASSWORD + ") " +
-                        "VALUES (1, 'admin@gmail.com', 'admin');";
-
-        private static final String sqlInsertClient =
-                "INSERT INTO " + Client.TABLE_NAME + " (" +
-                        Client.COLUMN_NAME + ", " + Client.COLUMN_SURNAME + ", " + Client.COLUMN_DOB + ", " + Client.COLUMN_TELNUMBER + ") " +
-                        "VALUES ('Jan', 'Kowalski', '2004-01-01', '123456789');";
-
-        private static final String sqlInsertCart =
-                "INSERT INTO " + Cart.TABLE_NAME + " (" +
-                        Cart.COLUMN_ID_CLIENT + ", " + Cart.COLUMN_DATE + ", " + Cart.COLUMN_HOMEADDRESS + ", " + Cart.COLUMN_POSTALCODE + ", " + Cart.COLUMN_POSTALCITY + ") " +
-                        "VALUES (1, '2022-01-01', 'ul. św. Józefa 26', '87-100', 'Toruń');";
-
-        private static final String sqlInsertCartProduct =
-                "INSERT INTO " + CartProduct.TABLE_NAME + " (" +
-                        CartProduct.COLUMN_ID_ORDER + ", " + CartProduct.COLUMN_ID_PRODUCT + ", " + CartProduct.COLUMN_COUNT + ", " + CartProduct.COLUMN_SIZE + ") " +
-                        "VALUES (1, 1, 1, 'M');";
-
-        private static final String sqlInsertProduct
-                = "INSERT INTO " + Product.TABLE_NAME + " (" +
-                Product.COLUMN_NAME + ", " + Product.COLUMN_DESCRIPTION + ", " + Product.COLUMN_COST + ", " + Product.COLUMN_TYPE + ", " + Product.COLUMN_IMAGE + ") " +
-                "VALUES ('Bluza z kapturem', 'Opis bluzy bardzo fajna', 99.99, 'bluza', 'obrazek');";
-
-        private static final String sqlInsertAll = sqlInsertAccount + sqlInsertClient + sqlInsertCart + sqlInsertCartProduct + sqlInsertProduct;
+        private static String sqliteInsertAccount(int idClient, String email, String password){
+            return "INSERT INTO " + Account.TABLE_NAME + " (" +
+                    Account.COLUMN_ID_CLIENT + ", " + Account.COLUMN_EMAIL + ", " + Account.COLUMN_PASSWORD + ") " +
+                    "VALUES ("+idClient+", '"+email+"', '"+password+"');";
+        }
+        private static String sqliteInsertClient(String name, String surname, String dateOfBirth, String telephoneNumber){
+            return "INSERT INTO " + Client.TABLE_NAME + " (" +
+                    Client.COLUMN_NAME + ", " + Client.COLUMN_SURNAME + ", " + Client.COLUMN_DOB + ", " + Client.COLUMN_TELNUMBER + ") " +
+                    "VALUES ('"+name+"', '"+surname+"', '"+dateOfBirth+"', '"+telephoneNumber+"');";
+        }
+        private static String sqliteInsertCart(int idClient, String date, String homeAddress, String postalCode, String postalCity){
+            return "INSERT INTO " + Cart.TABLE_NAME + " (" +
+                    Cart.COLUMN_ID_CLIENT + ", " + Cart.COLUMN_DATE + ", " + Cart.COLUMN_HOMEADDRESS + ", " + Cart.COLUMN_POSTALCODE + ", " + Cart.COLUMN_POSTALCITY + ") " +
+                    "VALUES ("+idClient+", '"+date+"', '"+homeAddress+"', '"+postalCode+"', '"+postalCity+"');";
+        }
+        private static String sqliteInsertCartProduct(int idOrder, int idProduct, int count, String size){
+            return "INSERT INTO " + CartProduct.TABLE_NAME + " (" +
+                    CartProduct.COLUMN_ID_ORDER + ", " + CartProduct.COLUMN_ID_PRODUCT + ", " + CartProduct.COLUMN_COUNT + ", " + CartProduct.COLUMN_SIZE + ") " +
+                    "VALUES ("+idOrder+", "+idProduct+", "+count+", '"+size+"');";
+        }
+        private static String sqliteInsertProduct(String name, String description, double cost, String type, int image){ //byte[] image
+            return "INSERT INTO " + Product.TABLE_NAME + " (" +
+                    Product.COLUMN_NAME + ", " + Product.COLUMN_DESCRIPTION + ", " + Product.COLUMN_COST + ", " + Product.COLUMN_TYPE + ", " + Product.COLUMN_IMAGE + ") " +
+                    "VALUES ('"+name+"', '"+description+"', "+cost+", '"+type+"', "+image+");";
+        }
     }
     private static class methodsSelect{
         private static final String sqlSelectAccount = "SELECT * FROM " + Account.TABLE_NAME + ";";
