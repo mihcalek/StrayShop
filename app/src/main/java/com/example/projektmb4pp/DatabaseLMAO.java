@@ -186,12 +186,4 @@ public final class DatabaseLMAO {
                     "VALUES ('"+name+"', '"+description+"', "+cost+", '"+type+"', "+image+");";
         }
     }
-    private static class methodsSelect{
-        private static final String sqlSelectAccount = "SELECT * FROM " + Account.TABLE_NAME + ";";
-        private static final String sqlSelectClient = "SELECT * FROM " + Client.TABLE_NAME + ";";
-        private static final String sqlSelectCart = "SELECT * FROM " + Cart.TABLE_NAME + ";";
-        private static final String sqlSelectCartProduct = "SELECT * FROM " + CartProduct.TABLE_NAME + ";";
-        private static final String sqlSelectProduct = "SELECT * FROM " + Product.TABLE_NAME + ";";
-        private static final String sqlSelectAll = sqlSelectAccount + sqlSelectClient + sqlSelectCart + sqlSelectCartProduct + sqlSelectProduct;
-    }
 }
