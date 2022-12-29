@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        SQLiteOpenHelper sqliteOpenHelper = new DatabaseLMAO.DBHelper(this);
-        db = sqliteOpenHelper.getWritableDatabase();
+//        SQLiteOpenHelper sqliteOpenHelper = new DatabaseLMAO.DBHelper(this);
+//        db = sqliteOpenHelper.getWritableDatabase();
 
     }
 }
