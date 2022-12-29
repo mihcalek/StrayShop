@@ -1,4 +1,4 @@
-package com.example.projektmb4pp;
+package com.example.projektmb4pp.fragments;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.projektmb4pp.R;
 
 
 public class WelcomeFragment extends Fragment {

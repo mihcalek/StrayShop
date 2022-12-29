@@ -1,4 +1,4 @@
-package com.example.projektmb4pp;
+package com.example.projektmb4pp.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.projektmb4pp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TemplateFragment extends Fragment {

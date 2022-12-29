@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.projektmb4pp.WelcomeFragment"
+        android:name="com.example.projektmb4pp.fragments.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.projektmb4pp.HomeFragment"
+        android:name="com.example.projektmb4pp.fragments.HomeFragment"
         android:label="fragment_template"
         tools:layout="@layout/fragment_home" />
     <navigation android:id="@+id/navigation" />

@@ -1,4 +1,4 @@
-package com.example.projektmb4pp;
+package com.example.projektmb4pp.fragments;
 
 import android.os.Bundle;
 
@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.projektmb4pp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 

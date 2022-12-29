@@ -16,6 +16,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +32,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         SQLiteOpenHelper sqliteOpenHelper = new DatabaseLMAO.DBHelper(this);
-        SQLiteDatabase db = sqliteOpenHelper.getWritableDatabase();
-
-
-
-
+        db = sqliteOpenHelper.getWritableDatabase();
 
     }
 }

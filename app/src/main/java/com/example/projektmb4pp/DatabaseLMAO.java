@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public final class DatabaseLMAO {
 
-    private DatabaseLMAO() {}
+    public DatabaseLMAO(Context context) {}
 
     public static class DBHelper extends SQLiteOpenHelper{
 

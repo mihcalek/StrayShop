@@ -1,5 +1,8 @@
-package com.example.projektmb4pp;
+package com.example.projektmb4pp.fragments;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.LayoutInflater;
@@ -11,9 +14,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.projektmb4pp.DatabaseLMAO;
+import com.example.projektmb4pp.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+
 
 public class LoginFragment extends Fragment {
     @Nullable
@@ -22,11 +29,17 @@ public class LoginFragment extends Fragment {
         //inflater łączący xml fragment_login i z contenerem w activity
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        final TextInputLayout passwordTextInput = view.findViewById(R.id.password_text_input);
+        final TextInputEditText loginEditText = view.findViewById(R.id.login_edit_text);
+        final TextInputLayout loginTextInput = view.findViewById(R.id.login_text_input);
         final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text);
+        final TextInputLayout passwordTextInput = view.findViewById(R.id.password_text_input);
         MaterialButton nextButton = view.findViewById(R.id.login_button);
         MaterialButton registerButton = view.findViewById(R.id.register_button);
 
+
+        SQLiteOpenHelper sqliteOpenHelper = new DatabaseLMAO.DBHelper(getActivity());
+        SQLiteDatabase db = sqliteOpenHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
 
 
         nextButton.setOnClickListener(new View.OnClickListener() {

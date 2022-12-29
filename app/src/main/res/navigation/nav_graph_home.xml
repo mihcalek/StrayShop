@@ -7,30 +7,30 @@
 
     <fragment
         android:id="@+id/loginFragment2"
-        android:name="com.example.projektmb4pp.LoginFragment"
+        android:name="com.example.projektmb4pp.fragments.LoginFragment"
         android:label="LoginFragment" />
     <fragment
         android:id="@+id/settingsFragment2"
-        android:name="com.example.projektmb4pp.SettingsFragment"
+        android:name="com.example.projektmb4pp.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/cartFragment2"
-        android:name="com.example.projektmb4pp.CartFragment"
+        android:name="com.example.projektmb4pp.fragments.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/registerFragment2"
-        android:name="com.example.projektmb4pp.RegisterFragment"
+        android:name="com.example.projektmb4pp.fragments.RegisterFragment"
         android:label="RegisterFragment" />
     <fragment
         android:id="@+id/showcaseFragment"
-        android:name="com.example.projektmb4pp.ShowcaseFragment"
+        android:name="com.example.projektmb4pp.fragments.ShowcaseFragment"
         android:label="fragment_showcase"
         tools:layout="@layout/fragment_showcase" />
     <fragment
         android:id="@+id/authorFragment"
-        android:name="com.example.projektmb4pp.AuthorFragment"
+        android:name="com.example.projektmb4pp.fragments.AuthorFragment"
         android:label="fragment_author"
         tools:layout="@layout/fragment_author" />
 </navigation>
