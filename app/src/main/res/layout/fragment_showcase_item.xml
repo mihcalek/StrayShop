@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ShowcaseItemFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/itemShowCaseImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:isScrollContainer="true">
+                <TextView
+                    android:id="@+id/itemShowCaseTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="itemShowCaseTitle"
+                    android:textSize="24sp"
+                    android:layout_marginBottom="7dp"/>
+
+                <TextView
+                    android:id="@+id/itemShowCasePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99,00 PLN"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="15dp"/>
+
+
+                <TextView
+                    android:id="@+id/itemShowCaseDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="@string/LoremIpsum"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginVertical="10sp"
+                android:paddingHorizontal="10dp">
+
+                <Spinner
+                    android:id="@+id/itemShowCaseQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:contentDescription="size"
+                    android:textAlignment="center"/>
+
+                <ImageButton
+                    android:id="@+id/showcaseButtonSubstract"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/baseline_keyboard_arrow_down_24"
+                    android:contentDescription="buttonSubstract"/>
+                <EditText
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:hint="1"
+                    android:textAlignment="center"/>
+                <ImageButton
+                    android:id="@+id/showcaseButtonAdd"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/baseline_keyboard_arrow_up_24"
+                    android:contentDescription="buttonSubstract"/>
+
+                <Button
+                    android:id="@+id/itemShowCaseBuyButton"
+                    android:layout_width="130dp"
+                    android:layout_height="60dp"
+                    android:text="Dodaj do koszyka"
+                    android:textSize="11sp"
+                    android:layout_marginHorizontal="5dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

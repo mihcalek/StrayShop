@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment2"
-        android:name="com.example.projektmb4pp.fragments.LoginFragment"
+        android:name="com.example.projektmb4pp.fragments.login.LoginFragment"
         android:label="LoginFragment" />
     <fragment
         android:id="@+id/settingsFragment2"
@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/registerFragment2"
-        android:name="com.example.projektmb4pp.fragments.RegisterFragment"
+        android:name="com.example.projektmb4pp.fragments.login.RegisterFragment"
         android:label="RegisterFragment" />
     <fragment
         android:id="@+id/showcaseFragment"
@@ -33,4 +33,9 @@
         android:name="com.example.projektmb4pp.fragments.AuthorFragment"
         android:label="fragment_author"
         tools:layout="@layout/fragment_author" />
+    <fragment
+        android:id="@+id/showcaseItemFragment"
+        android:name="com.example.projektmb4pp.fragments.ShowcaseItemFragment"
+        android:label="fragment_showcase_item"
+        tools:layout="@layout/fragment_showcase_item" />
 </navigation>

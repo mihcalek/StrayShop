@@ -1,4 +1,4 @@
-package com.example.projektmb4pp.fragments;
+package com.example.projektmb4pp.fragments.login;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;

@@ -4,10 +4,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.provider.BaseColumns;
+import android.util.Log;
+
 import com.example.projektmb4pp.adapter.Item;
 
 import androidx.annotation.Nullable;
+
+import java.io.ByteArrayOutputStream;
 
 public final class DatabaseLMAO {
 
@@ -95,7 +101,7 @@ public final class DatabaseLMAO {
                         Product.COLUMN_DESCRIPTION + " TEXT NOT NULL, " +
                         Product.COLUMN_TYPE + " TEXT NOT NULL, " +
                         Product.COLUMN_COST + " REAL NOT NULL, " +
-                        Product.COLUMN_IMAGE + " TEXT NOT NULL);";
+                        Product.COLUMN_IMAGE + " BLOB NOT NULL);";
     }
     private static class methodsDrop {
         private static final String sqlDropAccount = "DROP TABLE IF EXISTS " + Account.TABLE_NAME + ";";
@@ -125,7 +131,7 @@ public final class DatabaseLMAO {
                     CartProduct.COLUMN_ID_ORDER + ", " + CartProduct.COLUMN_ID_PRODUCT + ", " + CartProduct.COLUMN_COUNT + ", " + CartProduct.COLUMN_SIZE + ") " +
                     "VALUES ("+idOrder+", "+idProduct+", "+count+", '"+size+"');";
         }
-        private static String sqliteInsertProduct(String name, String description, String type, double cost, int image){ //byte[] image
+        private static String sqliteInsertProduct(String name, String description, String type, double cost, byte[] image){ //byte[] image
             return "INSERT INTO " + Product.TABLE_NAME + " (" +
                     Product.COLUMN_NAME + ", " + Product.COLUMN_DESCRIPTION + ", " + Product.COLUMN_TYPE + ", " + Product.COLUMN_COST + ", " + Product.COLUMN_IMAGE + ") " +
                     "VALUES ('"+name+"', '"+description+"', '"+type+"', "+cost+", "+image+");";
@@ -165,11 +171,13 @@ public final class DatabaseLMAO {
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCart(2, "2022-12-11", "ul. Wybickiego 13", "32-200", "Gdańsk"));
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCartProduct(2, 2, 5, "L"));
 
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Bluza z kapturem", "Opis fajna bluza", "bluza",99.99,  R.drawable.logo));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Spodnie jeansowe", "Opis fajne spodnie","spodnie", 119.99,  R.drawable.logo));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Koszulka", "Opis fajna koszulka", "koszulka",59.99,  R.drawable.sample));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Kurtka", "Opis fajna kurtka","kurtka", 199.99,  R.drawable.sample));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Golf", "Opis fajny golf","golf", 79.99,  R.drawable.sample));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Bluza z kapturem", "Opis fajna bluza", "bluza",99.99,  convertToBitmap(R.drawable.sample_white)));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Spodnie jeansowe", "Opis fajne spodnie","spodnie", 119.99,  convertToBitmap(R.drawable.sample)));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Koszulka", "Opis fajna koszulka", "koszulka",59.99,  convertToBitmap(R.drawable.sample_white)));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Kurtka", "Opis fajna kurtka","kurtka", 199.99,  convertToBitmap(R.drawable.sample)));
+            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Golf", "Opis fajny golf","golf", 79.99,  convertToBitmap(R.drawable.sample_white)));
+
+
         }
 
         @Override
@@ -196,7 +204,7 @@ public final class DatabaseLMAO {
                         cursor.getInt(0),
                         cursor.getString(1),
                         cursor.getString(2),
-                        cursor.getInt(3),
+                        cursor.getBlob(3),
                         cursor.getFloat(4),
                         cursor.getString(5)
                 );
@@ -204,6 +212,14 @@ public final class DatabaseLMAO {
             }
             cursor.close();
             return items;
+        }
+
+        public byte[] convertToBitmap(int image){
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), image);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+            return byteArray;
         }
     }
 }

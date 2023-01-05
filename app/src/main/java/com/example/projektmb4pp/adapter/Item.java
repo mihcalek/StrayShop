@@ -1,16 +1,17 @@
 package com.example.projektmb4pp.adapter;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Item {
     private int id;
     private String name;
     private String desc;
-    private int photo;
+    private byte[] photo;
     private float price;
     private String type;
 
-    public Item(int id, String name, String desc, int photo, float price, String type) {
+    public Item(int id, String name, String desc, byte[] photo, float price, String type) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -43,11 +44,11 @@ public class Item {
         this.desc = desc;
     }
 
-    public int getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(int photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 
@@ -72,11 +73,13 @@ public class Item {
         if (this == o) return true;
         if (!(o instanceof Item)) return false;
         Item item = (Item) o;
-        return getId() == item.getId() && getPhoto() == item.getPhoto() && Float.compare(item.getPrice(), getPrice()) == 0 && getName().equals(item.getName()) && getDesc().equals(item.getDesc()) && getType().equals(item.getType());
+        return getId() == item.getId() && Float.compare(item.getPrice(), getPrice()) == 0 && getName().equals(item.getName()) && getDesc().equals(item.getDesc()) && Arrays.equals(getPhoto(), item.getPhoto()) && getType().equals(item.getType());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getDesc(), getPhoto(), getPrice(), getType());
+        int result = Objects.hash(getId(), getName(), getDesc(), getPrice(), getType());
+        result = 31 * result + Arrays.hashCode(getPhoto());
+        return result;
     }
 }
