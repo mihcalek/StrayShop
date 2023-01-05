@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -51,22 +53,29 @@ public class ShowcaseItemFragment extends Fragment {
     private TextView description;
     private TextView price;
     private Spinner spinner;
+    private ImageButton less;
+    private ImageButton more;
+    EditText quantity;
+    int q = 1;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        spinner = view.findViewById(R.id.itemShowCaseQuantity);
+        spinner = view.findViewById(R.id.itemShowCaseSize);
 
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
-//                R.array.article_sizes, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+                R.array.article_sizes, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         photo = view.findViewById(R.id.itemShowCaseImage);
         name = view.findViewById(R.id.itemShowCaseTitle);
         description = view.findViewById(R.id.itemShowCaseDescription);
         price = view.findViewById(R.id.itemShowCasePrice);
+        less = view.findViewById(R.id.showcaseButtonSubstract);
+        more = view.findViewById(R.id.showcaseButtonAdd);
+        quantity = view.findViewById(R.id.showcaseEditTextQuantity);
 
         SQLiteDatabase db = new DatabaseLMAO.DBHelper(getContext()).getReadableDatabase();
         item = new DatabaseLMAO.DBHelper(getContext()).getItem(new DatabaseLMAO.DBHelper(getContext()).getWritableDatabase(), getArguments().getLong("id"));
@@ -80,5 +89,21 @@ public class ShowcaseItemFragment extends Fragment {
         price.setText(item.getPrice() + "");
         description.setText(item.getDesc());
 
+
+        less.setOnClickListener(l -> {
+            q = Integer.parseInt(quantity.getText().toString());
+            if (q > 1) {
+                quantity.setText((q - 1) + "");
+            }
+        });
+
+        more.setOnClickListener(l -> {
+            if(!quantity.getText().toString().equals("")) {
+                q = Integer.parseInt(quantity.getText().toString());
+                quantity.setText((q + 1) + "");
+            } else {
+                quantity.setText("1");
+            }
+        });
     }
 }
