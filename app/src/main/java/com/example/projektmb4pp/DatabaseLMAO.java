@@ -219,5 +219,22 @@ public final class DatabaseLMAO {
             cursor.close();
             return items;
         }
+
+        public Item getItem(SQLiteDatabase db, long id){
+            Cursor cursor = db.rawQuery("SELECT * FROM " + Product.TABLE_NAME + " WHERE " + Product._ID + " = " + id, null);
+            Item item = null;
+            while (cursor.moveToNext()){
+                item = new Item(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getFloat(4),
+                        cursor.getString(5)
+                );
+            }
+            cursor.close();
+            return item;
+        }
     }
 }

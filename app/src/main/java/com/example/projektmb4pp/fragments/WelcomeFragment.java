@@ -45,6 +45,7 @@ public class WelcomeFragment extends Fragment {
             @Override
             public void run() {
                 Navigation.findNavController(view).navigate(R.id.homeFragment);
+
             }
         }, 1500);
     }

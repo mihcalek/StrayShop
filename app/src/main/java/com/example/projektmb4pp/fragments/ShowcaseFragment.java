@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -55,7 +56,9 @@ public class ShowcaseFragment extends Fragment {
         Item[] items = new DatabaseLMAO.DBHelper(getContext()).getItemList(db);
 
         recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setAdapter(new ItemAdapter(items, getContext()));
+        recyclerView.setAdapter(new ItemAdapter(items, getContext(), Navigation.findNavController(view)));
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+
     }
 }

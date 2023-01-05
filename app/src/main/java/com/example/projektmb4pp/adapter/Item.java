@@ -1,5 +1,8 @@
 package com.example.projektmb4pp.adapter;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -30,6 +33,23 @@ public class Item {
         this.photo = photo;
         this.price = price;
         this.type = type;
+    }
+
+    public Item getItem(SQLiteDatabase db, int id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM Product WHERE _id = " + id, null);
+        Item item = null;
+        if (cursor.moveToNext()) {
+            item = new Item(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getFloat(4),
+                    cursor.getString(5)
+            );
+        }
+        cursor.close();
+        return item;
     }
 
     public int getId() {
