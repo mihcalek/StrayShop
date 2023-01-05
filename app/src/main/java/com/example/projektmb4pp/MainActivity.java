@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -18,6 +20,10 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
 
     public SQLiteDatabase db;
+    SharedPreferences loggedInAs;
+    SharedPreferences cart;
+    NavController navController;
+    NavHostFragment navHostFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         NavController navController = navHostFragment.getNavController();
 
+        cart = getSharedPreferences("cart", Context.MODE_PRIVATE);
+        if (cart.contains("cart")){
+            Log.i("cart", "Cart: " + cart.getString("cart", ""));
+        } else {
+            Log.i("cart", "Cart: " + "Empty");
+        }
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();

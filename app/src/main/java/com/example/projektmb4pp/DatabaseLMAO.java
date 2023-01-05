@@ -236,5 +236,59 @@ public final class DatabaseLMAO {
             cursor.close();
             return item;
         }
+
+        public OrderItem[] getOrderItems(SQLiteDatabase db, long orderID) {
+            Cursor cursor = db.rawQuery("SELECT * FROM OrderProduct WHERE id_order = " + orderID, null);
+            OrderItem[] orderItems = new OrderItem[cursor.getCount()];
+            int i = 0;
+            while (cursor.moveToNext()) {
+                orderItems[i] = new OrderItem(
+                        cursor.getInt(1),
+                        getItem(db, cursor.getInt(2)),
+                        cursor.getInt(3),
+                        cursor.getString(4)
+                );
+                Log.i("getOrderItems", orderItems[i].toString());
+                i++;
+            }
+            cursor.close();
+            return orderItems;
+        }
+
+        public Order[] getOrders(SQLiteDatabase db, long clientID) {
+            Cursor cursor = db.rawQuery("SELECT * FROM Orders WHERE id_client = " + clientID, null);
+            Order[] orders = new Order[cursor.getCount()];
+            int i = 0;
+            while (cursor.moveToNext()) {
+                orders[i] = new Order(
+                        cursor.getInt(0),
+                        cursor.getInt(1),
+                        getOrderItems(db, cursor.getInt(0)),
+                        cursor.getString(2),
+                        cursor.getString(3) + ", " + cursor.getString(5) + ", " + cursor.getString(4),
+                        getClientData(db, cursor.getInt(1)).getName() + " " + getClientData(db, cursor.getInt(1)).getSurname()
+                );
+                Log.i("getOrder", orders[i].toString());
+                i++;
+            }
+            cursor.close();
+            return orders;
+        }
+
+        public ClientData getClientData(SQLiteDatabase db, long clientID) {
+            Cursor cursor = db.rawQuery("SELECT * FROM Client WHERE _id = " + clientID, null);
+            ClientData clientData = null;
+            if (cursor.moveToNext()) {
+                clientData = new ClientData(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4)
+                );
+            }
+            cursor.close();
+            return clientData;
+        }
     }
 }
