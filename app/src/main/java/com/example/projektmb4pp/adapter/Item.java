@@ -7,11 +7,23 @@ public class Item {
     private int id;
     private String name;
     private String desc;
-    private byte[] photo;
+    private String photo;
     private float price;
     private String type;
 
-    public Item(int id, String name, String desc, byte[] photo, float price, String type) {
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                ", photo='" + photo + '\'' +
+                ", price=" + price +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
+    public Item(int id, String name, String desc, String photo, float price, String type) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -44,11 +56,11 @@ public class Item {
         this.desc = desc;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
@@ -73,13 +85,11 @@ public class Item {
         if (this == o) return true;
         if (!(o instanceof Item)) return false;
         Item item = (Item) o;
-        return getId() == item.getId() && Float.compare(item.getPrice(), getPrice()) == 0 && getName().equals(item.getName()) && getDesc().equals(item.getDesc()) && Arrays.equals(getPhoto(), item.getPhoto()) && getType().equals(item.getType());
+        return getId() == item.getId() && Float.compare(item.getPrice(), getPrice()) == 0 && getName().equals(item.getName()) && getDesc().equals(item.getDesc()) && getPhoto().equals(item.getPhoto()) && getType().equals(item.getType());
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getId(), getName(), getDesc(), getPrice(), getType());
-        result = 31 * result + Arrays.hashCode(getPhoto());
-        return result;
+        return Objects.hash(getId(), getName(), getDesc(), getPhoto(), getPrice(), getType());
     }
 }

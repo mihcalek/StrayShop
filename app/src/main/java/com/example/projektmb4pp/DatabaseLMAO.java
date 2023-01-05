@@ -1,6 +1,7 @@
 package com.example.projektmb4pp;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -101,7 +102,7 @@ public final class DatabaseLMAO {
                         Product.COLUMN_DESCRIPTION + " TEXT NOT NULL, " +
                         Product.COLUMN_TYPE + " TEXT NOT NULL, " +
                         Product.COLUMN_COST + " REAL NOT NULL, " +
-                        Product.COLUMN_IMAGE + " BLOB NOT NULL);";
+                        Product.COLUMN_IMAGE + " TEXT NOT NULL);";
     }
     private static class methodsDrop {
         private static final String sqlDropAccount = "DROP TABLE IF EXISTS " + Account.TABLE_NAME + ";";
@@ -131,10 +132,10 @@ public final class DatabaseLMAO {
                     CartProduct.COLUMN_ID_ORDER + ", " + CartProduct.COLUMN_ID_PRODUCT + ", " + CartProduct.COLUMN_COUNT + ", " + CartProduct.COLUMN_SIZE + ") " +
                     "VALUES ("+idOrder+", "+idProduct+", "+count+", '"+size+"');";
         }
-        private static String sqliteInsertProduct(String name, String description, String type, double cost, byte[] image){ //byte[] image
+        private static String sqliteInsertProduct(String name, String description, String type, double cost, String image){ //byte[] image
             return "INSERT INTO " + Product.TABLE_NAME + " (" +
                     Product.COLUMN_NAME + ", " + Product.COLUMN_DESCRIPTION + ", " + Product.COLUMN_TYPE + ", " + Product.COLUMN_COST + ", " + Product.COLUMN_IMAGE + ") " +
-                    "VALUES ('"+name+"', '"+description+"', '"+type+"', "+cost+", "+image+");";
+                    "VALUES ('"+name+"', '"+description+"', '"+type+"', "+cost+", '"+image+"');";
         }
     }
 
@@ -146,6 +147,7 @@ public final class DatabaseLMAO {
 
         public DBHelper(@Nullable Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
+            this.context = context;
         }
 
         @Override
@@ -171,13 +173,17 @@ public final class DatabaseLMAO {
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCart(2, "2022-12-11", "ul. Wybickiego 13", "32-200", "Gdańsk"));
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCartProduct(2, 2, 5, "L"));
 
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Bluza z kapturem", "Opis fajna bluza", "bluza",99.99,  convertToBitmap(R.drawable.sample_white)));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Spodnie jeansowe", "Opis fajne spodnie","spodnie", 119.99,  convertToBitmap(R.drawable.sample)));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Koszulka", "Opis fajna koszulka", "koszulka",59.99,  convertToBitmap(R.drawable.sample_white)));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Kurtka", "Opis fajna kurtka","kurtka", 199.99,  convertToBitmap(R.drawable.sample)));
-            sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct("Golf", "Opis fajny golf","golf", 79.99,  convertToBitmap(R.drawable.sample_white)));
+            String[] productNames = {"Bluza z kapturem", "Spodnie jeansowe", "Koszulka", "Kurtka", "Golf"};
+            String[] productDescriptions = {"Opis fajna bluza", "Opis fajne spodnie", "Opis fajna koszulka", "Opis fajna kurtka", "Opis fajny golf"};
+            String[] productTypes = {"bluza", "spodnie", "koszulka", "kurtka", "golf"};
+            String[] productCosts = {"139.99", "129.99", "39.99", "249.99", "159.99"};
 
-
+            TypedArray article_photos = context.getResources().obtainTypedArray(R.array.article_photos);
+            for(int i = 0; i < article_photos.length(); i++){
+                String[] imgPath = String.valueOf(article_photos.getText(i)).split("/");
+                String img = imgPath[imgPath.length - 1].replace(".png", "").trim();
+                sqLiteDatabase.execSQL(methodsInsert.sqliteInsertProduct(productNames[i], productDescriptions[i], img, Double.parseDouble(productCosts[i]), productTypes[i]));
+            }
         }
 
         @Override
@@ -204,7 +210,7 @@ public final class DatabaseLMAO {
                         cursor.getInt(0),
                         cursor.getString(1),
                         cursor.getString(2),
-                        cursor.getBlob(3),
+                        cursor.getString(3),
                         cursor.getFloat(4),
                         cursor.getString(5)
                 );
@@ -212,14 +218,6 @@ public final class DatabaseLMAO {
             }
             cursor.close();
             return items;
-        }
-
-        public byte[] convertToBitmap(int image){
-            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), image);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-            return byteArray;
         }
     }
 }

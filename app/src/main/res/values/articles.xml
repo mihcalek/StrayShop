@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="article_photos">
+        <item>@drawable/bluzazkapturem</item>
+        <item>@drawable/spodniejeansowe</item>
+        <item>@drawable/koszulka</item>
+        <item>@drawable/kurtka</item>
+        <item>@drawable/golf</item>
+    </integer-array>
+</resources>

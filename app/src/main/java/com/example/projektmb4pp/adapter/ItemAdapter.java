@@ -5,6 +5,7 @@ import com.example.projektmb4pp.R;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,9 +48,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.ViewHolder holder, int position) {
-
-        Bitmap bmp= BitmapFactory.decodeByteArray(items[position].getPhoto(), 0 , items[position].getPhoto().length, null);
-        holder.itemPhoto.setImageBitmap(bmp);
+        Log.i("item", items[position].toString());
+        holder.itemPhoto.setImageResource(context.getResources().getIdentifier(items[position].getPhoto(), "drawable", context.getPackageName()));
         holder.itemTitle.setText(items[position].getName());
         holder.itemCost.setText(items[position].getPrice() + " zł");
     }
