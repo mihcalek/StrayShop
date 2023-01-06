@@ -14,5 +14,6 @@
     <string name="welcome_hint_email">E-mail</string>
     <string name="toolbar_title">STRAYSHOP</string>
     <string name="LoremIpsum">LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum </string>
+    <string name="priceTotal">Łączna suma: </string>
 
 </resources>

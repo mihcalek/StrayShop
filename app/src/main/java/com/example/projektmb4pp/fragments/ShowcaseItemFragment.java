@@ -5,11 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,14 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import com.example.projektmb4pp.DatabaseLMAO;
 import com.example.projektmb4pp.R;
 import com.example.projektmb4pp.adapter.Item;
-import com.example.projektmb4pp.*;
-import com.example.projektmb4pp.ClientData;
-import com.example.projektmb4pp.Order;
-import com.example.projektmb4pp.OrderItem;
+import com.example.projektmb4pp.adapter.OrderItem;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class ShowcaseItemFragment extends Fragment {
 
@@ -124,7 +120,7 @@ public class ShowcaseItemFragment extends Fragment {
         });
 
         addToCart.setOnClickListener(l -> {
-            if(!quantity.getText().toString().equals("")) {
+            if(quantity.getText().toString().equals("") || quantity.getText().toString().isEmpty()) {
                 quantity.setText("1");
             }
             Gson gson = new Gson();

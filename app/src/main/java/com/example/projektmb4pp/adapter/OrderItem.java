@@ -1,6 +1,4 @@
-package com.example.projektmb4pp;
-
-import com.example.projektmb4pp.adapter.Item;
+package com.example.projektmb4pp.adapter;
 
 public class OrderItem {
     private int id;

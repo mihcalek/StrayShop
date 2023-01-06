@@ -1,26 +1,47 @@
-package com.example.projektmb4pp;
+package com.example.projektmb4pp.adapter;
 
+import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Order {
     private long id;
     private long clientID;
-    private OrderItem[] items;
+    private ArrayList<OrderItem> items;
     private String date;
-    private String address;
+    private String homeAddress;
+    private String city;
+    private String postalCode;
     private String name;
     private Float total;
 
-    public Order(long id, long clientID, OrderItem[] items, String date, String address, String name) {
+    public Order(long id, long clientID, ArrayList<OrderItem> items, String date, String homeAddress, String city, String postalCode, String name) {
         this.id = id;
         this.clientID = clientID;
         this.items = items;
         this.date = date;
-        this.address = address;
+        this.homeAddress = homeAddress;
+        this.city = city;
+        this.postalCode = postalCode;
         this.name = name;
         this.total = 0f;
         for (OrderItem item : items) {
             this.total += item.getTotal();
+        }
+    }
+
+    public Order(long clientID, ArrayList<OrderItem> items, String date, String homeAddress, String city, String postalCode) {
+        this.id = -1;
+        this.clientID = clientID;
+        this.items = items;
+        this.date = date;
+        this.homeAddress = homeAddress;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.name = "";
+        this.total = 0f;
+        for (OrderItem item : items) {
+            total += item.getTotal();
         }
     }
 
@@ -40,11 +61,11 @@ public class Order {
         this.clientID = clientID;
     }
 
-    public OrderItem[] getItems() {
+    public ArrayList<OrderItem> getItems() {
         return items;
     }
 
-    public void setItems(OrderItem[] items) {
+    public void setItems(ArrayList<OrderItem> items) {
         this.items = items;
     }
 
@@ -56,12 +77,28 @@ public class Order {
         this.date = date;
     }
 
-    public String getAddress() {
-        return address;
+    public String getHomeAddress() {
+        return homeAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String getName() {
@@ -89,10 +126,11 @@ public class Order {
 
         if (id != order.id) return false;
         if (clientID != order.clientID) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(items, order.items)) return false;
+        if (!items.equals(order.items)) return false;
         if (!date.equals(order.date)) return false;
-        if (!address.equals(order.address)) return false;
+        if (!homeAddress.equals(order.homeAddress)) return false;
+        if (!city.equals(order.city)) return false;
+        if (!postalCode.equals(order.postalCode)) return false;
         if (!name.equals(order.name)) return false;
         return total.equals(order.total);
     }
@@ -101,9 +139,11 @@ public class Order {
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (int) (clientID ^ (clientID >>> 32));
-        result = 31 * result + Arrays.hashCode(items);
+        result = 31 * result + items.hashCode();
         result = 31 * result + date.hashCode();
-        result = 31 * result + address.hashCode();
+        result = 31 * result + homeAddress.hashCode();
+        result = 31 * result + city.hashCode();
+        result = 31 * result + postalCode.hashCode();
         result = 31 * result + name.hashCode();
         result = 31 * result + total.hashCode();
         return result;
@@ -114,9 +154,11 @@ public class Order {
         return "Order{" +
                 "id=" + id +
                 ", clientID=" + clientID +
-                ", items=" + Arrays.toString(items) +
+                ", items=" + items +
                 ", date='" + date + '\'' +
-                ", address='" + address + '\'' +
+                ", homeAddress='" + homeAddress + '\'' +
+                ", city='" + city + '\'' +
+                ", postalCode='" + postalCode + '\'' +
                 ", name='" + name + '\'' +
                 ", total=" + total +
                 '}';

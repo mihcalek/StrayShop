@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="7dp">
+
+    <TextView
+        android:id="@+id/cartItemName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:gravity="center_vertical"
+        android:text="default text"/>
+
+    <TextView
+        android:id="@+id/cartItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:gravity="end|center"
+        android:text="0.00"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/cartItemLess"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/baseline_keyboard_arrow_down_24"
+            android:contentDescription="buttonSubstract"/>
+
+        <TextView
+            android:id="@+id/cartItemCount"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:gravity="center"
+            android:text="1"
+            android:textAlignment="center"/>
+
+        <ImageButton
+            android:id="@+id/cartItemMore"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/baseline_keyboard_arrow_up_24"
+            android:contentDescription="buttonAdd"/>
+
+        <ImageButton
+            android:id="@+id/cartItemDelete"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/baseline_close_24"
+            android:contentDescription="buttonDelete"/>
+
+    </LinearLayout>
+
+</LinearLayout>

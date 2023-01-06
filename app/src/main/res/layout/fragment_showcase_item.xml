@@ -55,7 +55,7 @@
                 android:orientation="horizontal"
                 android:gravity="end"
                 android:layout_marginVertical="10sp"
-                android:paddingHorizontal="10dp">
+                android:paddingHorizontal="20dp">
 
                 <Spinner
                     android:id="@+id/itemShowCaseSize"
@@ -65,10 +65,10 @@
                     android:textAlignment="center"/>
 
                 <ImageButton
-                    android:id="@+id/showcaseButtonAdd"
+                    android:id="@+id/showcaseButtonSubstract"
                     android:layout_width="50dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/baseline_keyboard_arrow_up_24"
+                    android:src="@drawable/baseline_keyboard_arrow_down_24"
                     android:contentDescription="buttonSubstract"/>
 
                 <EditText
@@ -77,21 +77,23 @@
                     android:layout_height="60dp"
                     android:hint="1"
                     android:textAlignment="center"/>
+
                 <ImageButton
-                    android:id="@+id/showcaseButtonSubstract"
+                    android:id="@+id/showcaseButtonAdd"
                     android:layout_width="50dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/baseline_keyboard_arrow_down_24"
-                    android:contentDescription="buttonSubstract"/>
-
-                <Button
-                    android:id="@+id/itemShowCaseBuyButton"
-                    android:layout_width="130dp"
-                    android:layout_height="60dp"
-                    android:text="Dodaj do koszyka"
-                    android:textSize="11sp"/>
+                    android:src="@drawable/baseline_keyboard_arrow_up_24"
+                    android:contentDescription="buttonSubstract" />
 
             </LinearLayout>
+            <Button
+                android:id="@+id/itemShowCaseBuyButton"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Dodaj do koszyka"
+                android:textSize="11sp"
+                android:layout_gravity="end"
+                android:layout_marginRight="20dp"/>
         </LinearLayout>
     </ScrollView>
 
