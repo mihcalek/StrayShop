@@ -101,10 +101,12 @@ public class ShowcaseItemFragment extends Fragment {
         name.setText(item.getName());
         price.setText(item.getPrice() + "");
         description.setText(item.getDesc());
+        quantity.setText(1 + "");
 
 
         less.setOnClickListener(l -> {
             q = Integer.parseInt(quantity.getText().toString());
+            Log.i("Q", "onViewCreated: " + q);
             if (q > 1) {
                 quantity.setText((q - 1) + "");
             }

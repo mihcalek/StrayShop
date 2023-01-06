@@ -83,9 +83,9 @@ public class CartFragment extends Fragment implements CartAdapter.EventListener{
             update();
         });
 
-//        cartCheckout.setOnClickListener(l -> {
-//            Navigation.findNavController(view).navigate(R.id.orderFragment);
-//        });
+        cartCheckout.setOnClickListener(l -> {
+            Navigation.findNavController(view).navigate(R.id.orderFragment);
+        });
     }
 
     @Override

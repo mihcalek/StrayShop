@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.OrderFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".login.LoginActivity"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="@string/orderData"
+                android:textSize="50sp"
+                android:textAllCaps="true"/>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="@string/orderHomeAddress"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"/>
+
+                <EditText
+                    android:id="@+id/orderHomeAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:hint="adres"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="@string/orderCity"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"/>
+
+                <EditText
+                    android:id="@+id/orderCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:hint="miasto"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:text="@string/orderPostalCode"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"/>
+
+                <EditText
+                    android:id="@+id/orderPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:hint="kod pocztowy"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/orderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="@string/orderButton"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

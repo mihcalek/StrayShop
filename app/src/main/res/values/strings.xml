@@ -15,5 +15,10 @@
     <string name="toolbar_title">STRAYSHOP</string>
     <string name="LoremIpsum">LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum </string>
     <string name="priceTotal">Łączna suma: </string>
+    <string name="orderCity">Miasto</string>
+    <string name="orderPostalCode">Kod pocztowy</string>
+    <string name="orderHomeAddress">Adres</string>
+    <string name="orderButton">Zamów</string>
+    <string name="orderData">Dane</string>
 
 </resources>
