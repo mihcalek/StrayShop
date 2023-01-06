@@ -29,12 +29,12 @@ public class LoginFragment extends Fragment {
         //inflater łączący xml fragment_login i z contenerem w activity
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        final TextInputEditText loginEditText = view.findViewById(R.id.login_edit_text);
+        final TextInputEditText loginEditText = view.findViewById(R.id.login_edit_text_login);
         final TextInputLayout loginTextInput = view.findViewById(R.id.login_text_input);
-        final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text);
+        final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text_login);
         final TextInputLayout passwordTextInput = view.findViewById(R.id.password_text_input);
         MaterialButton nextButton = view.findViewById(R.id.login_button);
-        MaterialButton registerButton = view.findViewById(R.id.register_button);
+        MaterialButton registerButton = view.findViewById(R.id.register_button_to_fragment);
 
 
         SQLiteOpenHelper sqliteOpenHelper = new DatabaseLMAO.DBHelper(getActivity());

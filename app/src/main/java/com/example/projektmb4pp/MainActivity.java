@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         NavController navController = navHostFragment.getNavController();
 
+        loggedInAs = getSharedPreferences("user", Context.MODE_PRIVATE);
+        long accountID = loggedInAs.getLong("accountID", -1);
+        Log.i("db", "ID: " + accountID);
+
+
         cart = getSharedPreferences("cart", Context.MODE_PRIVATE);
         if (cart.contains("cart")){
             Log.i("cart", "Cart: " + cart.getString("cart", ""));
