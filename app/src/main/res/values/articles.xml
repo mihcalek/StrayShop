@@ -6,5 +6,6 @@
         <item>@drawable/koszulkaphoto</item>
         <item>@drawable/kurtkaphoto</item>
         <item>@drawable/golfphoto</item>
+        <item>@drawable/shortyphoto</item>
     </integer-array>
 </resources>

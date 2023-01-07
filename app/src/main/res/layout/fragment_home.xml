@@ -55,7 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:defaultNavHost="false"
-                app:navGraph="@navigation/nav_graph_home" />
+                app:navGraph="@navigation/nav_graph_home"
+                android:layout_marginBottom="55dp"/>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_navigation"

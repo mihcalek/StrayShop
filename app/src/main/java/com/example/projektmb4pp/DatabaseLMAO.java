@@ -174,10 +174,10 @@ public final class DatabaseLMAO {
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCart(2, "2022-12-11", "ul. Wybickiego 13", "32-200", "Gdańsk"));
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCartProduct(2, 2, 5, "L"));
 
-            String[] productNames = {"Bluza z kapturem", "Spodnie jeansowe", "Koszulka", "Kurtka", "Golf"};
-            String[] productDescriptions = {"Opis fajna bluza", "Opis fajne spodnie", "Opis fajna koszulka", "Opis fajna kurtka", "Opis fajny golf"};
-            String[] productTypes = {"bluza", "spodnie", "koszulka", "kurtka", "golf"};
-            String[] productCosts = {"139.99", "129.99", "39.99", "249.99", "159.99"};
+            String[] productNames = {"Bluza z kapturem", "Spodnie jeansowe", "Koszulka", "Kurtka", "Golf", "Shorty"};
+            String[] productDescriptions = {"Opis fajna bluza", "Opis fajne spodnie", "Opis fajna koszulka", "Opis fajna kurtka", "Opis fajny golf", "Opis fajne shorty"};
+            String[] productTypes = {"bluza", "spodnie", "koszulka", "kurtka", "golf", "shorty"};
+            String[] productCosts = {"139.99", "129.99", "39.99", "249.99", "159.99", "89.99"};
 
             TypedArray article_photos = context.getResources().obtainTypedArray(R.array.article_photos);
             for(int i = 0; i < article_photos.length(); i++){
