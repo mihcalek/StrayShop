@@ -174,10 +174,42 @@ public final class DatabaseLMAO {
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCart(2, "2022-12-11", "ul. Wybickiego 13", "32-200", "Gdańsk"));
             sqLiteDatabase.execSQL(methodsInsert.sqliteInsertCartProduct(2, 2, 5, "L"));
 
-            String[] productNames = {"Bluza z kapturem", "Spodnie jeansowe", "Koszulka", "Kurtka", "Golf", "Shorty"};
-            String[] productDescriptions = {"Opis fajna bluza", "Opis fajne spodnie", "Opis fajna koszulka", "Opis fajna kurtka", "Opis fajny golf", "Opis fajne shorty"};
-            String[] productTypes = {"bluza", "spodnie", "koszulka", "kurtka", "golf", "shorty"};
-            String[] productCosts = {"139.99", "129.99", "39.99", "249.99", "159.99", "89.99"};
+            String[] productNames = {
+                    "Bluza z kapturem",         //1
+                    "Spodnie jeansowe",         //2
+                    "Koszulka z nadrukiem",     //3
+                    "Kurtka bomberka",          //4
+                    "Golf bordowy",             //5
+                    "Shorty jeansowe",           //6
+                    "Bluza new york",           //7
+            };
+            String[] productDescriptions = {
+                    "Bluza z kapturem, halloweenowym nadrukiem i kieszenią typu kangur.",         //1
+                    "Spodnie jeansowe typu Slim Fit.",       //2
+                    "Bawełniana koszulka z symbolicznym nadrukiem, krótkim rękawem i okrągłym dekoltem.",      //3
+                    "Kurtka typu bomberka, ocieplana od wewnątrz.",        //4
+                    "Bawełniany golf z długim rękawem.",          //5
+                    "Jeansowe shorty z kieszeniami z tyłu.",        //6
+                    "Bluza bez kapturem, kontrastowym nadrukiem New York na piersi, długim rękawem i okrągłym dekoltem."  //7
+            };
+            String[] productTypes = {
+                    "bluza",                    //1
+                    "spodnie",                  //2
+                    "koszulka",                 //3
+                    "kurtka",                   //4
+                    "golf",                     //5
+                    "shorty",                    //6
+                    "bluza"                     //7
+            };
+            String[] productCosts = {
+                    "139.99",                   //1
+                    "129.99",                   //2
+                    "39.99",                    //3
+                    "249.99",                   //4
+                    "159.99",                   //5
+                    "89.99",                    //6
+                    "139.99"                    //7
+            };
 
             TypedArray article_photos = context.getResources().obtainTypedArray(R.array.article_photos);
             for(int i = 0; i < article_photos.length(); i++){
