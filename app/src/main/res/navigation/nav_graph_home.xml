@@ -27,7 +27,13 @@
         android:id="@+id/showcaseFragment"
         android:name="com.example.projektmb4pp.fragments.ShowcaseFragment"
         android:label="fragment_showcase"
-        tools:layout="@layout/fragment_showcase" />
+        tools:layout="@layout/fragment_showcase" >
+        <action
+            android:id="@+id/action_showcaseFragment_to_showcaseItemFragment"
+            app:destination="@id/showcaseItemFragment"
+            app:popUpTo="@id/showcaseFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/authorFragment"
         android:name="com.example.projektmb4pp.fragments.AuthorFragment"
@@ -55,7 +61,7 @@
         tools:layout="@layout/fragment_order_history" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.projektmb4pp.ProfileFragment"
+        android:name="com.example.projektmb4pp.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

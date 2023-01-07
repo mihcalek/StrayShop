@@ -30,6 +30,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
         this.navController = navController;
     }
 
+
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView itemPhoto;
         private TextView itemTitle;
