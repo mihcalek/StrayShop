@@ -8,5 +8,9 @@
         <item>@drawable/golfphoto</item>
         <item>@drawable/shortyphoto</item>
         <item>@drawable/bluzanewyork</item>
+        <item>@drawable/bluzazpanelami</item>
+        <item>@drawable/spodniejogger</item>
+        <item>@drawable/spodniecargo</item>
+        <item>@drawable/plaszczbasicphoto</item>
     </integer-array>
 </resources>

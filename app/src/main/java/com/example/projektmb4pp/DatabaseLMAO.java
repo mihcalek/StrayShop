@@ -182,6 +182,10 @@ public final class DatabaseLMAO {
                     "Golf bordowy",             //5
                     "Shorty jeansowe",           //6
                     "Bluza new york",           //7
+                    "Bluza z panelami",         //8
+                    "Spodnie dresowe jogger",   //9
+                    "Spodnie cargo",            //10
+                    "Płaszcz basic",            //11
             };
             String[] productDescriptions = {
                     "Bluza z kapturem, halloweenowym nadrukiem i kieszenią typu kangur.",         //1
@@ -190,7 +194,11 @@ public final class DatabaseLMAO {
                     "Kurtka typu bomberka, ocieplana od wewnątrz.",        //4
                     "Bawełniany golf z długim rękawem.",          //5
                     "Jeansowe shorty z kieszeniami z tyłu.",        //6
-                    "Bluza bez kapturem, kontrastowym nadrukiem New York na piersi, długim rękawem i okrągłym dekoltem."  //7
+                    "Bluza bez kapturem, kontrastowym nadrukiem New York na piersi, długim rękawem i okrągłym dekoltem.",  //7
+                    "Bluza z kapturem, kolorowymi panelami w różnych kolorach, długim rękawem i kieszenią typu kangur.",  //8
+                    "Spodnie dresowe typu jogger z kieszeniami i sznurkiem do regulacji.",  //9
+                    "Spodnie cargo typu jogger ze sciągaczami i gumką ze sznurkiem w pasie.",  //10
+                    "Płaszcz typu basic z bocznymi kieszeniami i zapięciem na dwa guziki.",  //11
             };
             String[] productTypes = {
                     "bluza",                    //1
@@ -199,7 +207,11 @@ public final class DatabaseLMAO {
                     "kurtka",                   //4
                     "golf",                     //5
                     "shorty",                    //6
-                    "bluza"                     //7
+                    "bluza",                     //7
+                    "bluza",                     //8
+                    "spodnie",                   //9
+                    "spodnie",                   //10
+                    "kurtka",                    //11
             };
             String[] productCosts = {
                     "139.99",                   //1
@@ -208,7 +220,11 @@ public final class DatabaseLMAO {
                     "249.99",                   //4
                     "159.99",                   //5
                     "89.99",                    //6
-                    "139.99"                    //7
+                    "139.99",                    //7
+                    "109.99",                    //8
+                    "129.99",                    //9
+                    "179.99",                    //10
+                    "199.99",                    //11
             };
 
             TypedArray article_photos = context.getResources().obtainTypedArray(R.array.article_photos);
