@@ -84,9 +84,9 @@ public class OrderFragment extends Fragment {
                 order = new Order(accountID, orderItems, new Timestamp(System.currentTimeMillis()).toString(), homeAddress.getText().toString(), city.getText().toString(), postalCode.getText().toString());
                 new DatabaseLMAO.DBHelper(getContext()).insertOrder(db, order);
                 cart.edit().clear().apply();
-                Navigation.findNavController(view).navigate(R.id.homeFragment);
+                Navigation.findNavController(view).navigate(R.id.showcaseFragment);
             } else {
-                Navigation.findNavController(view).navigate(R.id.homeFragment);
+                Navigation.findNavController(view).navigate(R.id.showcaseFragment);
             }
         });
     }

@@ -43,4 +43,9 @@
         android:name="com.example.projektmb4pp.fragments.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/pagerLoginFragment"
+        android:name="com.example.projektmb4pp.fragments.PagerLoginFragment"
+        android:label="fragment_pager_login"
+        tools:layout="@layout/fragment_pager_login" />
 </navigation>

@@ -29,6 +29,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 
 public class LoginFragment extends Fragment {
+    public LoginFragment() {
+    }
 
     private TextInputEditText loginEditText;
     private TextInputEditText passwordEditText;
