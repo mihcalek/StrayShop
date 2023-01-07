@@ -5,9 +5,31 @@
     android:layout_height="match_parent"
     tools:context=".fragments.OrderHistoryFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Order history to do" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginVertical="20dp"
+            android:textSize="50sp"
+            android:text="Historia zamówień" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/historyRecycler"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </ScrollView>
+
+    </LinearLayout>
 
 </FrameLayout>

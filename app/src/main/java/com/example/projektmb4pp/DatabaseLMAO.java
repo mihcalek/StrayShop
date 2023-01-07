@@ -305,7 +305,7 @@ public final class DatabaseLMAO {
         }
 
         public Order[] getOrders(SQLiteDatabase db, long clientID) {
-            Cursor cursor = db.rawQuery("SELECT * FROM Orders WHERE id_client = " + clientID, null);
+            Cursor cursor = db.rawQuery("SELECT * FROM Cart WHERE id_client = " + clientID, null);
             Order[] orders = new Order[cursor.getCount()];
             int i = 0;
             while (cursor.moveToNext()) {
