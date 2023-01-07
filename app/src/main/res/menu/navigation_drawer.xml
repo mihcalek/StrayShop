@@ -4,11 +4,13 @@
         android:id="@+id/main_item"
         android:title="@string/app_name">
         <menu>
+
             <item
-                android:id="@+id/tosButton"
+                android:id="@+id/orderHistoryButton"
                 android:icon="@drawable/sample"
-                android:title="TOS"
+                android:title="Order History"
                 android:checkable="true"/>
+
             <item
                 android:id="@+id/authorButton"
                 android:icon="@drawable/sample"

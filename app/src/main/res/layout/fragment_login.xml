@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="40dp">
+    android:paddingHorizontal="40dp">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:text="@string/toolbar_title"
+        android:layout_height="100dp"
+        android:text="LOGIN"
         android:textSize="34sp"
         android:fontFamily="@font/robotoserif_thin"
         android:gravity="center"
