@@ -53,4 +53,9 @@
         android:name="com.example.projektmb4pp.fragments.OrderHistoryFragment"
         android:label="fragment_order_history"
         tools:layout="@layout/fragment_order_history" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.projektmb4pp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
