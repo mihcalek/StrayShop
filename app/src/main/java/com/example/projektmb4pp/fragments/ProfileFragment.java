@@ -1,5 +1,7 @@
 package com.example.projektmb4pp.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -33,6 +35,9 @@ public class ProfileFragment extends Fragment {
     private TextView surname;
     private TextView dob;
     private TextView pnumber;
+    ClientData clientData;
+
+    SharedPreferences loggedInAs;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,12 +53,22 @@ public class ProfileFragment extends Fragment {
         dob = view.findViewById(R.id.profileDob);
         pnumber = view.findViewById(R.id.profilePhoneNumber);
 
+        loggedInAs = this.requireActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        long accountID = loggedInAs.getLong("accountID", -1);
+        Log.i("czyZalogowany", accountID + "");
+
         SQLiteDatabase db = new DatabaseLMAO.DBHelper(getContext()).getReadableDatabase();
-        ClientData clientData = new DatabaseLMAO.DBHelper(getContext()).getClientData(new DatabaseLMAO.DBHelper(getContext()).getWritableDatabase(), getArguments().getLong("id"));
+        clientData = new DatabaseLMAO.DBHelper(getContext()).getClientData(db, accountID);
 
         Log.i("ClientData", clientData.getName());
         Log.i("ClientData", clientData.getSurname());
         Log.i("ClientData", clientData.getDateOfBirth());
         Log.i("ClientData", clientData.getPhoneNumber());
+
+        name.setText("Imie: " + clientData.getName());
+        surname.setText("Nazwisko: " + clientData.getSurname());
+        dob.setText("Data urodzenia: " + clientData.getDateOfBirth());
+        pnumber.setText("Numer telefonu: " + clientData.getPhoneNumber());
+
     }
 }
