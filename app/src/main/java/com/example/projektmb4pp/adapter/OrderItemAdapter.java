@@ -45,7 +45,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText(items.get(position).getCount() + " x " + holder.itemView.getContext().getString(holder.itemView.getContext().getResources().getIdentifier(items.get(position).getItem().getName(), "string", holder.itemView.getContext().getPackageName())) + " [" + items.get(position).getSize() + "]");
+        holder.textView.setText(items.get(position).getCount() + " x " + holder.itemView.getContext().getString(Integer.parseInt(items.get(position).getItem().getName())) + " [" + items.get(position).getSize() + "]");
     }
 
     @Override

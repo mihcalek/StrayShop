@@ -288,7 +288,7 @@ public final class DatabaseLMAO {
         }
 
         public ArrayList<OrderItem> getOrderItems(SQLiteDatabase db, long orderID) {
-            Cursor cursor = db.rawQuery("SELECT * FROM OrderProduct WHERE id_order = " + orderID, null);
+            Cursor cursor = db.rawQuery("SELECT * FROM Order_Product WHERE id_order = " + orderID, null);
             ArrayList<OrderItem> orderItems = new ArrayList<>();
             int i = 0;
             while (cursor.moveToNext()) {

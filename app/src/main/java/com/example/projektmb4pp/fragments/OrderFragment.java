@@ -72,7 +72,7 @@ public class OrderFragment extends Fragment {
         orderItems = gson.fromJson(json, type);
 
         loggedInAs = requireActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
-        long accountID = loggedInAs.getLong("accountID", -1);
+
 
         homeAddress = view.findViewById(R.id.orderHomeAddress);
         city = view.findViewById(R.id.orderCity);
@@ -81,8 +81,10 @@ public class OrderFragment extends Fragment {
         db = new DatabaseLMAO.DBHelper(getContext()).getWritableDatabase();
 
         orderButton.setOnClickListener(l -> {
+            long accountID = loggedInAs.getLong("accountID", -1);
             if(!(orderItems == null) && !(homeAddress.getText().toString().equals("")) && !(city.getText().toString().equals("")) && !(postalCode.getText().toString().equals(""))) {
                 order = new Order(accountID, orderItems, new Timestamp(System.currentTimeMillis()).toString(), homeAddress.getText().toString(), city.getText().toString(), postalCode.getText().toString());
+                Log.i("agh", order.toString());
                 new DatabaseLMAO.DBHelper(getContext()).insertOrder(db, order);
                 cart.edit().clear().apply();
                 Navigation.findNavController(view).navigate(R.id.showcaseFragment);
