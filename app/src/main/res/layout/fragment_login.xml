@@ -56,16 +56,5 @@
             android:layout_alignParentRight="true"
             android:text="@string/welcome_button_login" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/register_button_to_fragment"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_toStartOf="@id/login_button"
-            android:layout_toLeftOf="@id/login_button"
-            android:text="@string/welcome_button_register" />
-
     </RelativeLayout>
 </LinearLayout>

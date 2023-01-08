@@ -35,7 +35,6 @@ public class LoginFragment extends Fragment {
     private TextInputEditText loginEditText;
     private TextInputEditText passwordEditText;
     private MaterialButton nextButton;
-    private MaterialButton registerButton;
     private SQLiteOpenHelper dbHelper;
     SharedPreferences sharedPreferences;
     @Nullable
@@ -47,7 +46,6 @@ public class LoginFragment extends Fragment {
         loginEditText = view.findViewById(R.id.login_edit_text_login);
         passwordEditText = view.findViewById(R.id.password_edit_text_login);
         nextButton = view.findViewById(R.id.login_button);
-        registerButton = view.findViewById(R.id.register_button_to_fragment);
 
         dbHelper = new DatabaseLMAO.DBHelper(getActivity());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -69,19 +67,6 @@ public class LoginFragment extends Fragment {
             }
             cursor.close();
         });
-
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.registerFragment2);
-            }
-        });
-
         return view;
-    }
-
-    //Ustawia warunki poprawnego hasła
-    private boolean isPasswordValid(@Nullable Editable text) {
-        return text != null && text.length() >= 8;
     }
 }

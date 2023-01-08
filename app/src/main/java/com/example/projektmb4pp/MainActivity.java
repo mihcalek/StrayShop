@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences cart;
     NavController navController;
     NavHostFragment navHostFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

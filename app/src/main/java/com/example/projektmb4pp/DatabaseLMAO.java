@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import com.example.projektmb4pp.adapter.ClientData;
 import com.example.projektmb4pp.adapter.Item;
 import com.example.projektmb4pp.adapter.Order;
 import com.example.projektmb4pp.adapter.OrderItem;

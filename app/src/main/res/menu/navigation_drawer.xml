@@ -16,6 +16,12 @@
                 android:icon="@drawable/sample"
                 android:title="Author"
                 android:checkable="true"/>
+
+            <item
+                android:id="@+id/profileButton"
+                android:icon="@drawable/sample"
+                android:title="Profile"
+                android:checkable="true"/>
         </menu>
     </item>
 </menu>

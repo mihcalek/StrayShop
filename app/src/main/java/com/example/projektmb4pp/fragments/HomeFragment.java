@@ -1,5 +1,6 @@
 package com.example.projektmb4pp.fragments;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
     private NavigationView navigationView;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
+    SharedPreferences sharedPreferences;
 
 
 
@@ -78,6 +80,11 @@ public class HomeFragment extends Fragment {
                         return true;
 
                     case R.id.optionAccount:
+//                        if (sharedPreferences.getBoolean("isLogged", false)) {
+//                            Navigation.findNavController(fragmentContainerView).navigate(R.id.accountFragment);
+//                        } else {
+//                            Navigation.findNavController(fragmentContainerView).navigate(R.id.loginFragment);
+//                        }
                         Navigation.findNavController(fragmentContainerView).navigate(R.id.pagerLoginFragment);
                         return true;
 
@@ -103,6 +110,10 @@ public class HomeFragment extends Fragment {
                         return true;
                     case R.id.orderHistoryButton:
                         Navigation.findNavController(fragmentContainerView).navigate(R.id.orderHistoryFragment);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        return true;
+                    case R.id.profileButton:
+                        Navigation.findNavController(fragmentContainerView).navigate(R.id.profileFragment);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         return true;
                 }
