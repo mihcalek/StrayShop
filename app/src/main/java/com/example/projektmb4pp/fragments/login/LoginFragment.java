@@ -62,6 +62,7 @@ public class LoginFragment extends Fragment {
                 Toast.makeText(view.getContext(), "Correct", Toast.LENGTH_SHORT).show();
                 sharedPreferences = this.requireActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
                 sharedPreferences.edit().putLong("accountID", cursor.getLong(0)).apply();
+                Navigation.findNavController(view).navigate(R.id.profileFragment);
             } else {
                 Toast.makeText(this.getContext(), "Incorrect", Toast.LENGTH_SHORT).show();
             }

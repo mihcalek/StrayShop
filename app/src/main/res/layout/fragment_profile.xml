@@ -45,6 +45,13 @@
                 android:layout_height="48dp"
                 android:text="profilePhoneNumber"
                 android:gravity=""/>
+            <Button
+                android:id="@+id/profileLogoutButton"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:text="Wyloguj"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

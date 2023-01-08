@@ -1,5 +1,6 @@
 package com.example.projektmb4pp.fragments;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -36,7 +37,7 @@ public class HomeFragment extends Fragment {
     private NavigationView navigationView;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    SharedPreferences sharedPreferences;
+    SharedPreferences loggedInAs;
 
 
 
@@ -69,6 +70,7 @@ public class HomeFragment extends Fragment {
         toolbar = view.findViewById(R.id.toolbar);
         navigationView = view.findViewById(R.id.navigationView);
 
+        loggedInAs = this.requireActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -80,12 +82,14 @@ public class HomeFragment extends Fragment {
                         return true;
 
                     case R.id.optionAccount:
-//                        if (sharedPreferences.getBoolean("isLogged", false)) {
-//                            Navigation.findNavController(fragmentContainerView).navigate(R.id.accountFragment);
-//                        } else {
-//                            Navigation.findNavController(fragmentContainerView).navigate(R.id.loginFragment);
-//                        }
-                        Navigation.findNavController(fragmentContainerView).navigate(R.id.pagerLoginFragment);
+
+                        long accountID = loggedInAs.getLong("accountID", -1);
+                        Log.i("logged", accountID + "");
+                        if (accountID != -1) {
+                            Navigation.findNavController(fragmentContainerView).navigate(R.id.profileFragment);
+                        } else {
+                            Navigation.findNavController(fragmentContainerView).navigate(R.id.pagerLoginFragment);
+                        }
                         return true;
 
                     case R.id.optionCart:
