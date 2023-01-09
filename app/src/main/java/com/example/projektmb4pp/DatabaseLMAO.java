@@ -348,9 +348,9 @@ public final class DatabaseLMAO {
             values.put("id_client", order.getClientID());
             values.put("date", order.getDate());
             values.put("home_address", order.getHomeAddress());
-            values.put("city", order.getCity());
             values.put("postal_code", order.getPostalCode());
-            long orderID = db.insert("Orders", null, values);
+            values.put("postal_city", order.getCity());
+            long orderID = db.insert("Cart", null, values);
             Log.i("cart", "Order Data: " + values.toString());
 
             for (OrderItem orderItem : order.getItems()) {
