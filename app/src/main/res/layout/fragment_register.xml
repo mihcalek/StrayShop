@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingHorizontal="40dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,107 +15,114 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="REGISTER"
+                android:text="@string/register"
                 android:textSize="34sp"
                 android:fontFamily="@font/robotoserif_thin"
                 android:gravity="center"
                 android:layout_marginTop="40dp"/>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="@string/welcome_hint_email" />
-+
-            <EditText
-                android:id="@+id/email_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:inputType="text"
-                android:maxLines="1"/>
+                android:hint="@string/welcome_hint_email" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="@string/welcome_hint_password"/>
-
-                <EditText
+                android:hint="@string/password">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_edit_text"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+                    android:layout_height="48dp"
+                    android:inputType="textPassword"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/confirm_password_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="Powtórz hasło" />
-
-                <EditText
+                android:hint="@string/confirm_password">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/confirm_password_edit_text"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+                    android:layout_height="48dp"
+                    android:inputType="textPassword"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/name_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="Imie"/>
-
-                <EditText
+                android:hint="@string/name">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/name_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:inputType="textPersonName"/>
+                    android:inputType="textPersonName"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/surname_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="Nazwisko"/>
-
-                <EditText
+                android:hint="@string/surname">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/surname_edit_text"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp" />
+                    android:layout_height="48dp"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/DoB_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="Data urodzenia"
-                android:ems="10"/>
-
-                <EditText
+                android:hint="@string/date_of_birth_hint"
+                android:ems="10">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/DoB_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/phone_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="Nr. Telefonu"/>
-
-                <EditText
+                android:hint="@string/phone_number">
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone_edit_text"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp" />
-
+                    android:layout_height="48dp"
+                    android:inputType="phone"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -125,8 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:text="@string/welcome_button_register" />
+                    android:text="@string/register" />
 
 
             </RelativeLayout>

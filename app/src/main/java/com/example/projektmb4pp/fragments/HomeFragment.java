@@ -116,10 +116,6 @@ public class HomeFragment extends Fragment {
                         Navigation.findNavController(fragmentContainerView).navigate(R.id.orderHistoryFragment);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         return true;
-                    case R.id.profileButton:
-                        Navigation.findNavController(fragmentContainerView).navigate(R.id.profileFragment);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        return true;
                 }
                 return false;
             }

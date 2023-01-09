@@ -47,7 +47,7 @@
                     android:id="@+id/itemShowCaseDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/LoremIpsum"
+                    android:text="@string/lorem_ipsum"
                     android:textSize="16sp"/>
             </LinearLayout>
             <LinearLayout
@@ -91,7 +91,7 @@
                 android:id="@+id/itemShowCaseBuyButton"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
-                android:text="Dodaj do koszyka"
+                android:text="@string/add_to_cart_button"
                 android:textSize="11sp"
                 android:layout_gravity="end"
                 android:layout_marginRight="20dp"/>

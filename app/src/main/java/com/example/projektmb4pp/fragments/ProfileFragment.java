@@ -65,10 +65,10 @@ public class ProfileFragment extends Fragment {
         clientData = new DatabaseLMAO.DBHelper(getContext()).getClientData(db, accountID);
 
         if (accountID != -1) {
-            name.setText("Imie: " + clientData.getName());
-            surname.setText("Nazwisko: " + clientData.getSurname());
-            dob.setText("Data urodzenia: " + clientData.getDateOfBirth());
-            pnumber.setText("Numer telefonu: " + clientData.getPhoneNumber());
+            name.setText(getString(R.string.name) + ": " + clientData.getName());
+            surname.setText(getString(R.string.surname) + ": " + clientData.getSurname());
+            dob.setText(getString(R.string.date_of_birth) + ": " + clientData.getDateOfBirth());
+            pnumber.setText(getString(R.string.phone_number) + ": " + clientData.getPhoneNumber());
         }
         logout.setOnClickListener(p -> {
             loggedInAs.edit().putLong("accountID", -1).apply();

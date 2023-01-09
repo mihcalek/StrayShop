@@ -2,23 +2,40 @@
     <string name="app_name">StrayShop</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="welcome_hint_login">Login</string>
-    <string name="welcome_hint_password">Hasło</string>
-    <string name="welcome_hint_username">Nazwa użytkownika</string>
-    <string name="welcome_button_login">Login</string>
-    <string name="welcome_button_register">Register</string>
-    <string name="welcome_error_password">Hasło nie spełnia wymagań</string>
-
     <string name="search_title">search</string>
     <string name="filter_title">filter</string>
     <string name="welcome_hint_email">E-mail</string>
     <string name="toolbar_title">STRAYSHOP</string>
-    <string name="LoremIpsum">LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum </string>
-    <string name="priceTotal">Łączna suma: </string>
-    <string name="orderCity">Miasto</string>
-    <string name="orderPostalCode">Kod pocztowy</string>
-    <string name="orderHomeAddress">Adres</string>
-    <string name="orderButton">Zamów</string>
-    <string name="orderData">Dane</string>
+    <string name="lorem_ipsum">LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum </string>
+    <string name="price_total">Łączna suma: </string>
+    <string name="order_city">Miasto</string>
+    <string name="order_postal_code">Kod pocztowy</string>
+    <string name="order_home_address">Adres</string>
+    <string name="order_button">Zamów</string>
+    <string name="order_data">Dane</string>
+
+    <string name="home">Strona Główna</string>
+    <string name="account">Konto</string>
+    <string name="cart">Koszyk</string>
+    <string name="settings">Ustawienia</string>
+
+    <string name="register">Zarejestruj się</string>
+    <string name="login">Zaloguj się</string>
+    <string name="welcome_error_password">Hasło nie spełnia wymagań</string>
+
+    <string name="confirm_password">Potwierdź hasło</string>
+    <string name="name">Imię</string>
+    <string name="surname">Nazwisko</string>
+    <string name="date_of_birth_hint">Data urodzenia (yyyy-mm-dd)</string>
+    <string name="date_of_birth">Data urodzenia</string>
+    <string name="phone_number">Nr. Telefonu</string>
+    <string name="add_to_cart_button">Dodaj do koszyka</string>
+    <string name="password">Hasło</string>
+    <string name="email">E-mail</string>
+    <string name="profile">Profil</string>
+    <string name="logout">Wyloguj</string>
+    <string name="order_history">Historia zamówień</string>
+    <string name="author">Autor</string>
+
 
 </resources>

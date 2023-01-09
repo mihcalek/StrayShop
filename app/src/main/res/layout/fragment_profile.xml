@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".fragments.ProfileFragment"
+    android:paddingHorizontal="40dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,11 +13,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="30dp">
+            >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="Profil"
+                android:text="@string/profile"
                 android:textSize="34sp"
                 android:fontFamily="@font/robotoserif_thin"
                 android:gravity="center"
@@ -25,33 +26,40 @@
                 android:id="@+id/profileName"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="ProfileName"
-                android:gravity=""/>
+                android:text="@string/name"
+                android:gravity=""
+                android:layout_margin="4dp"/>
             <TextView
                 android:id="@+id/profileSurname"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="profileSurname"
-                android:gravity=""/>
+                android:text="@string/surname"
+                android:gravity=""
+                android:layout_margin="4dp"/>
             <TextView
                 android:id="@+id/profileDob"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="profileDob"
-                android:gravity=""/>
+                android:text="@string/date_of_birth"
+                android:gravity=""
+                android:layout_margin="4dp"/>
             <TextView
                 android:id="@+id/profilePhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="profilePhoneNumber"
-                android:gravity=""/>
-            <Button
-                android:id="@+id/profileLogoutButton"
-                android:layout_width="125dp"
-                android:layout_height="48dp"
-                android:text="Wyloguj"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="right"/>
+                android:text="@string/phone_number"
+                android:gravity=""
+                android:layout_margin="4dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/profileLogoutButton"
+                    android:layout_width="125dp"
+                    android:layout_height="48dp"
+                    android:text="@string/logout"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

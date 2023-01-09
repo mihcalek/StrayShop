@@ -4,20 +4,20 @@
         android:id="@+id/optionHome"
         android:enabled="true"
         android:icon="@drawable/home_outline"
-        android:title="Home"/>
+        android:title="@string/home"/>
     <item
         android:id="@+id/optionAccount"
         android:enabled="true"
         android:icon="@drawable/account_outline"
-        android:title="Account"/>
+        android:title="@string/account"/>
     <item
         android:id="@+id/optionCart"
         android:enabled="true"
         android:icon="@drawable/basket_outline"
-        android:title="Cart"/>
+        android:title="@string/cart"/>
     <item
         android:id="@+id/optionSettings"
         android:enabled="true"
         android:icon="@drawable/cog_outline"
-        android:title="Settings"/>
+        android:title="@string/settings"/>
 </menu>

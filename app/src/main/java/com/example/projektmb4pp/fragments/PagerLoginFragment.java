@@ -47,8 +47,8 @@ public class PagerLoginFragment extends Fragment {
 
         viewPager = view.findViewById(R.id.viewpager);
         viewPagerAdapter = new PagerLoginAdapter(getChildFragmentManager());
-        viewPagerAdapter.add(new LoginFragment(), "login");
-        viewPagerAdapter.add(new RegisterFragment(), "register");
+        viewPagerAdapter.add(new LoginFragment(), getString(R.string.login));
+        viewPagerAdapter.add(new RegisterFragment(), getString(R.string.register));
 
         viewPager.setAdapter(viewPagerAdapter);
 

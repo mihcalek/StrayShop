@@ -7,20 +7,14 @@
 
             <item
                 android:id="@+id/orderHistoryButton"
-                android:icon="@drawable/sample"
-                android:title="Order History"
+                android:icon="@drawable/baseline_shopping_cart_24"
+                android:title="@string/order_history"
                 android:checkable="true"/>
 
             <item
                 android:id="@+id/authorButton"
-                android:icon="@drawable/sample"
-                android:title="Author"
-                android:checkable="true"/>
-
-            <item
-                android:id="@+id/profileButton"
-                android:icon="@drawable/sample"
-                android:title="Profile"
+                android:icon="@drawable/baseline_person_pin_24"
+                android:title="@string/author"
                 android:checkable="true"/>
         </menu>
     </item>

@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textSize="34sp"
         android:fontFamily="@font/robotoserif_thin"
         android:gravity="center"
@@ -22,13 +22,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:hint="@string/welcome_hint_email">
+        android:hint="@string/email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_edit_text_login"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -36,17 +36,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:hint="@string/welcome_hint_password">
+        android:hint="@string/password"
+        android:maxLines="1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_edit_text_login"
             android:layout_width="match_parent"
-            android:layout_height="48dp" />
+            android:layout_height="48dp"
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login_button"
@@ -54,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="@string/welcome_button_login" />
+            android:text="@string/login" />
 
     </RelativeLayout>
 </LinearLayout>
