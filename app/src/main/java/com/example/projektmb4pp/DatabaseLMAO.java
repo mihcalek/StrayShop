@@ -359,7 +359,7 @@ public final class DatabaseLMAO {
                 values.put("id_product", orderItem.getItem().getId());
                 values.put("count", orderItem.getCount());
                 values.put("size", orderItem.getSize());
-                db.insert("OrderProduct", null, values);
+                db.insert("Order_Product", null, values);
             }
             Log.i("cart", "Order item: " + values.toString());
         };

@@ -2,6 +2,7 @@ package com.example.projektmb4pp.adapter;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.textView.setText(items.get(position).getCount() + " x " + items.get(position).getItem().getName() + " [" + items.get(position).getSize() + "]");
+        Log.i("orderAdapterrr", items.get(position).getCount() + " x " + items.get(position).getItem().getName() + " [" + items.get(position).getSize() + "]");
     }
 
     @Override

@@ -36,6 +36,9 @@
     <string name="logout">Wyloguj</string>
     <string name="order_history">Historia zamówień</string>
     <string name="author">Autor</string>
+    <string name="order_id">ID zamówienia</string>
+    <string name="order_items">Przedmioty</string>
+    <string name="order_total">Suma</string>
 
 
 </resources>
